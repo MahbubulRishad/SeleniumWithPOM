@@ -20,6 +20,9 @@ public class CustomerLoginPage extends BaseTest {
     @FindBy(css = ".login .button")
     WebElement loginBtn;
 
+    @FindBy(css = ".error")
+    WebElement errorEl;
+
     //    Locators initialization in constructor
     public CustomerLoginPage() {
         PageFactory.initElements(driver, this);
@@ -45,6 +48,12 @@ public class CustomerLoginPage extends BaseTest {
         return new OverviewPage();
     }
 
+    public CustomerLoginPage clickLoginBtn2() {
+        loginBtn.isDisplayed();
+        loginBtn.click();
+        return this;
+    }
+
     //    only applicable for log in class
     public OverviewPage login(String username, String password) {
         fillUsername(username);
@@ -53,5 +62,16 @@ public class CustomerLoginPage extends BaseTest {
         return new OverviewPage();
     }
 
+
+    public CustomerLoginPage login(String username) {
+        fillUsername(username);
+        clickLoginBtn();
+        return this;
+    }
+
+
+    public boolean hasError() {
+        return errorEl.isDisplayed();
+    }
 
 }

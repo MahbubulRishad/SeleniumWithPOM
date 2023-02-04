@@ -1,5 +1,6 @@
 package com.parabank.parasoft.test.base;
 
+import com.parabank.parasoft.test.utill.General;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +10,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
 public class BaseTest {
@@ -55,6 +57,10 @@ public class BaseTest {
         } else {
             System.out.println("Please provide browser name");
         }
+
+        driver.get(properties.getProperty("baseUrl"));
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(General.PAGE_LOAD_TIME));
     }
 
 
