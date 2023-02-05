@@ -9,11 +9,20 @@ public class OverviewPage extends BaseTest {
     @FindBy(css = "a[href*='logout']")
     WebElement logoutLink;
 
+    @FindBy(css = "a[href*='openaccount']")
+    WebElement openNewAccountLinkEl;
+
     public OverviewPage() {
         PageFactory.initElements(driver, this);
     }
 
     public boolean isLogoutLink() {
         return logoutLink.isDisplayed();
+    }
+
+    public OpenAccountPage clickOpenNewAccountLink(){
+        openNewAccountLinkEl.isDisplayed();
+        openNewAccountLinkEl.click();
+        return new OpenAccountPage();
     }
 }

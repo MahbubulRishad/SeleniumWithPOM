@@ -44,12 +44,20 @@ public class CustomerLoginTest extends BaseTest {
     }
 
     @Test(priority = 0)
-    public void loginShouldFail() {
-    customerLoginPage = new CustomerLoginPage()
-            .login(getUsername());
+    public void loginShouldFailOnlyUsername() {
+        customerLoginPage = new CustomerLoginPage()
+                .login(getUsername());
 
-    Assert.assertTrue(customerLoginPage.hasError());
+        Assert.assertTrue(customerLoginPage.hasError());
 
+    }
+
+    @Test(priority = 1)
+    public void loginShouldFailOnlyPassword() {
+        customerLoginPage = new CustomerLoginPage()
+                .login(getPassword());
+
+        Assert.assertTrue(customerLoginPage.hasError());
     }
 
     @AfterClass

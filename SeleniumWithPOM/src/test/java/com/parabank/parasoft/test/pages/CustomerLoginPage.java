@@ -70,6 +70,7 @@ public class CustomerLoginPage extends BaseTest {
     }
 
 
+
     public boolean hasError() {
         return errorEl.isDisplayed();
     }
