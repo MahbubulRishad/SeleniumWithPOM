@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/Personal/SeleniumWithPOM/SeleniumWithPOM">
+        <classes>
+            <class name="com.parabank.parasoft.test.testcases.CustomerLoginTest">
+                <methods>
+                    <include name="loginShouldSucceed"/>
+                    <include name="loginShouldSucceed2"/>
+                    <include name="loginShouldFailOnlyUsername"/>
+                    <include name="loginShouldFailOnlyPassword"/>
+                </methods>
+            </class>
+            <class name="com.parabank.parasoft.test.testcases.OpenAccountTest">
+                <methods>
+                    <include name="openAccountSuccessfully"/>
+                </methods>
+            </class>
+            <class name="com.parabank.parasoft.test.testcases.RegisterTest">
+                <methods>
+                    <include name="userRegistrationShouldSucceed"/>
+                </methods>
+            </class>
+            <class name="com.parabank.parasoft.test.testcases.UpdateProfileTest">
+                <methods>
+                    <include name="updateProfileShouldSucceed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

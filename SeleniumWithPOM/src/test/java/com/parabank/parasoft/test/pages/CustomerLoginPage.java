@@ -23,6 +23,9 @@ public class CustomerLoginPage extends BaseTest {
     @FindBy(css = ".error")
     WebElement errorEl;
 
+    @FindBy(css = "a[href*='register']")
+    WebElement registerLinkEL;
+
     //    Locators initialization in constructor
     public CustomerLoginPage() {
         PageFactory.initElements(driver, this);
@@ -69,10 +72,14 @@ public class CustomerLoginPage extends BaseTest {
         return this;
     }
 
-
-
     public boolean hasError() {
         return errorEl.isDisplayed();
+    }
+
+    public RegisterPage clickRegisterLink() {
+        registerLinkEL.isDisplayed();
+        registerLinkEL.click();
+        return new RegisterPage();
     }
 
 }
